@@ -6,6 +6,9 @@ A chip group or tag view for SwiftUI.
 
 All Pull Requests (PRs) are welcome. Help us make this library better.
 
+## Changelog
+Look at [Changelog](https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/CHANGELOG.md) for release notes.
+
 ## License
 
 <details>
