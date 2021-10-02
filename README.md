@@ -1,6 +1,6 @@
 # SwiftUIChipGroup
 
-A chip group or tag view for SwiftUI.
+A chip group (tag view) for SwiftUI.
 
 ## :clap: Contribution
 
