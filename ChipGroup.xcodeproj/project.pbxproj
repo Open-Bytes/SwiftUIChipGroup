@@ -22,6 +22,7 @@
 		C63A8172275AE3CD002C7F69 /* TagViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8171275AE3CD002C7F69 /* TagViewBuilder.swift */; };
 		C63A8174275AE436002C7F69 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8173275AE436002C7F69 /* SizePreferenceKey.swift */; };
 		C63A8176275AE45E002C7F69 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8175275AE45E002C7F69 /* Item.swift */; };
+		C63A817A275AEBB5002C7F69 /* TagListViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8179275AEBB5002C7F69 /* TagListViewVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		C63A8171275AE3CD002C7F69 /* TagViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewBuilder.swift; sourceTree = "<group>"; };
 		C63A8173275AE436002C7F69 /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
 		C63A8175275AE45E002C7F69 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C63A8179275AEBB5002C7F69 /* TagListViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListViewVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				C63A8171275AE3CD002C7F69 /* TagViewBuilder.swift */,
 				C63A8173275AE436002C7F69 /* SizePreferenceKey.swift */,
 				C63A8175275AE45E002C7F69 /* Item.swift */,
+				C63A8179275AEBB5002C7F69 /* TagListViewVM.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				C63A8176275AE45E002C7F69 /* Item.swift in Sources */,
 				04A4DE18239AD0C900AA26B7 /* AppDelegate.swift in Sources */,
 				04A4DE1A239AD0C900AA26B7 /* SceneDelegate.swift in Sources */,
+				C63A817A275AEBB5002C7F69 /* TagListViewVM.swift in Sources */,
 				C63A8174275AE436002C7F69 /* SizePreferenceKey.swift in Sources */,
 				C63A816E275AE335002C7F69 /* ChipView.swift in Sources */,
 				C63A816C275AE2E7002C7F69 /* ItemProtocol.swift in Sources */,
