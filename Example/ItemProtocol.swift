@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+public protocol ItemProtocol{
+    var id : String  { get set }
+    var name : String { get set }
+}

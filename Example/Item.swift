@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+public struct Item: Identifiable, Hashable, ItemProtocol {
+    public var id: String
+    public var name: String
+}
+
+public enum Selection{
+    case multiSelection
+    case singleSelection
+    case noSelection
+}

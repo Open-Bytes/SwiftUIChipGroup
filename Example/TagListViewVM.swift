@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
+
+class TagListViewVM : ObservableObject{
+    @Published var listSelectedItems: [Item] = []
+}

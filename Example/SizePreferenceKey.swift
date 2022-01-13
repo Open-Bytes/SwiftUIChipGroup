@@ -8,14 +8,9 @@
 
 import SwiftUI
 
-struct SizePreferenceKey: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+public struct SizePreferenceKey: PreferenceKey {
+    public static var defaultValue: CGSize = .zero
 
-struct SizePreferenceKey_Previews: PreviewProvider {
-    static var previews: some View {
-        SizePreferenceKey()
+    public static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
     }
 }
