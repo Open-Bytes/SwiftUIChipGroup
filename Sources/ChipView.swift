@@ -8,51 +8,48 @@
 
 import SwiftUI
 
-public struct ChipView: View {
-    
-    @State private var backgroundColorOfSelectedItem : Color
-    @State private var backgroundColorOfUnSelectedItem : Color
-    @State private var textSelectedColor : Color
-    @State private var textUnselectedColor : Color
+public struct ChipView<T: ChipItemProtocol>: View {
+
+    @State private var selectedItemBackgroundColor: AnyView
+    @State private var deselectedItemBackgroundColor: AnyView
+    @State private var selectedTextColor: Color
+    @State private var deselectedTextColor: Color
     @State private var customFont: Font
-    private let items: [Item]
+    private let items: [T]
     private var type: Selection
-    private let onItemTapped: (Item) -> Void
+    private let onItemTapped: (T) -> Void
     @State var selected = false
-    @Binding private var selectedItems: [Item]
-    let contentView: () -> AnyView
+    @Binding private var selectedItems: [T]
 
     public init(type: Selection,
-                backgroundColorOfSelectedItem: Color,
-                backgroundColorOfUnSelectedItem: Color,
-                textSelectedColor: Color,
-                textUnselectedColor: Color,
+                selectedItemBackgroundColor: AnyView,
+                deselectedItemBackgroundColor: AnyView,
+                selectedTextColor: Color,
+                deselectedTextColor: Color,
                 customFont: Font,
-                items: [Item],
-                selectedItems: Binding<[Item]>,
-                onItemTapped: @escaping (Item) -> Void,
-                @ViewBuilder contentView: @escaping () -> AnyView
+                items: [T],
+                selectedItems: Binding<[T]>,
+                onItemTapped: @escaping (T) -> Void
 
     ) {
         self.type = type
-        self.backgroundColorOfSelectedItem = backgroundColorOfSelectedItem
-        self.backgroundColorOfUnSelectedItem = backgroundColorOfUnSelectedItem
-        self.textSelectedColor = textSelectedColor
-        self.textUnselectedColor = textUnselectedColor
+        self.selectedItemBackgroundColor = selectedItemBackgroundColor
+        self.deselectedItemBackgroundColor = deselectedItemBackgroundColor
+        self.selectedTextColor = selectedTextColor
+        self.deselectedTextColor = deselectedTextColor
         self.customFont = customFont
         self.items = items
         _selectedItems = selectedItems
         self.onItemTapped = onItemTapped
-        self.contentView = contentView
     }
-  
+
     public var body: some View {
         FlexibleView(
                 availableWidth: UIScreen.main.bounds.width - 120,
                 data: items,
                 spacing: 15,
                 alignment: .leading
-        ) { (item: Item) in
+        ) { (item: T) in
             Button(action: {
                 print("item is", item)
                 selectItem(item)
@@ -60,13 +57,13 @@ public struct ChipView: View {
             }, label: {
                 Text(item.name)
                         .padding(.all, 5)
-                        .foregroundColor(selectedItems.contains(item) ? textSelectedColor : textUnselectedColor)
+                        .foregroundColor(selectedItems.contains(item) ? selectedTextColor : deselectedTextColor)
                         .font(customFont)
             })
                     .padding(.horizontal, 10)
                     .padding(.vertical, 3)
                     .background(
-                        contentView().foregroundColor(selectedItems.contains(item) ? backgroundColorOfSelectedItem : backgroundColorOfUnSelectedItem)
+                            selectedItems.contains(item) ? selectedItemBackgroundColor : deselectedItemBackgroundColor
                     )
         }
                 .padding(.horizontal, 30)
@@ -74,11 +71,11 @@ public struct ChipView: View {
                 .padding(.trailing, 10)
     }
 
-    private func selectItem(_ item: Item) {
+    private func selectItem(_ item: T) {
         select(type: type, item: item)
     }
-    
-    func multiSelect(item: Item){
+
+    func multiSelect(item: T) {
         if selectedItems.contains(item) {
             selectedItems.removeAll {
                 $0.id == item.id
@@ -88,7 +85,8 @@ public struct ChipView: View {
 
         selectedItems.append(item)
     }
-    func singleSelect(item: Item){
+
+    func singleSelect(item: T) {
         selectedItems.removeAll()
         if selectedItems.contains(item) {
             selectedItems.removeAll {
@@ -98,14 +96,14 @@ public struct ChipView: View {
         }
         selectedItems.append(item)
     }
-    
-    func select(type: Selection,item: Item){
+
+    func select(type: Selection, item: T) {
         switch type {
-        case .multiSelection:
+        case .multi:
             multiSelect(item: item)
-        case .singleSelection:
+        case .single:
             singleSelect(item: item)
-        case .noSelection:
+        case .none:
             break
         }
     }

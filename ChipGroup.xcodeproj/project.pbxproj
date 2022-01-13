@@ -14,15 +14,16 @@
 		04A4DE24239AD0CC00AA26B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A4DE22239AD0CC00AA26B7 /* LaunchScreen.storyboard */; };
 		04A4DE2B239AD4A900AA26B7 /* ChipGroup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A4DDDA239AB0C800AA26B7 /* ChipGroup.framework */; };
 		04A4DE2C239AD4A900AA26B7 /* ChipGroup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04A4DDDA239AB0C800AA26B7 /* ChipGroup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1BCACC9ADBD629AFF02F022F /* ChipItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCAC2ED1C0B078F087D8DEA /* ChipItem.swift */; };
 		58B83DE02BE0B0E074465F1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B830DA36896C518BED3456 /* ContentView.swift */; };
-		C63A816A275AE2BF002C7F69 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8169275AE2BF002C7F69 /* TagListView.swift */; };
-		C63A816C275AE2E7002C7F69 /* ItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A816B275AE2E7002C7F69 /* ItemProtocol.swift */; };
-		C63A816E275AE335002C7F69 /* ChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A816D275AE335002C7F69 /* ChipView.swift */; };
-		C63A8170275AE351002C7F69 /* FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A816F275AE351002C7F69 /* FlexibleView.swift */; };
-		C63A8172275AE3CD002C7F69 /* TagViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8171275AE3CD002C7F69 /* TagViewBuilder.swift */; };
-		C63A8174275AE436002C7F69 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8173275AE436002C7F69 /* SizePreferenceKey.swift */; };
-		C63A8176275AE45E002C7F69 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8175275AE45E002C7F69 /* Item.swift */; };
-		C63A817A275AEBB5002C7F69 /* TagListViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8179275AEBB5002C7F69 /* TagListViewVM.swift */; };
+		F2992E5727902FBF00C944E1 /* ChipGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8169275AE2BF002C7F69 /* ChipGroup.swift */; };
+		F2992E5827902FC300C944E1 /* ChipItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A816B275AE2E7002C7F69 /* ChipItemProtocol.swift */; };
+		F2992E5927902FC700C944E1 /* ChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A816D275AE335002C7F69 /* ChipView.swift */; };
+		F2992E5A27902FCB00C944E1 /* FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A816F275AE351002C7F69 /* FlexibleView.swift */; };
+		F2992E5B27902FCE00C944E1 /* ChipBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8171275AE3CD002C7F69 /* ChipBuilder.swift */; };
+		F2992E5C27902FD200C944E1 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8173275AE436002C7F69 /* SizePreferenceKey.swift */; };
+		F2992E5D27902FD700C944E1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8175275AE45E002C7F69 /* Item.swift */; };
+		F2992E5E27902FDC00C944E1 /* ChipGroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8179275AEBB5002C7F69 /* ChipGroupVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,15 +76,16 @@
 		1A54FBDBFEE81BC84F3718EB /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		1A54FBE1E997F88975C3BD8C /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		1BCAC26B82EF6DA8F8BE186D /* ChipGroup.podspec */ = {isa = PBXFileReference; lastKnownFileType = file.podspec; path = ChipGroup.podspec; sourceTree = "<group>"; };
+		1BCAC2ED1C0B078F087D8DEA /* ChipItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipItem.swift; sourceTree = "<group>"; };
 		58B830DA36896C518BED3456 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C63A8169275AE2BF002C7F69 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
-		C63A816B275AE2E7002C7F69 /* ItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemProtocol.swift; sourceTree = "<group>"; };
+		C63A8169275AE2BF002C7F69 /* ChipGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroup.swift; sourceTree = "<group>"; };
+		C63A816B275AE2E7002C7F69 /* ChipItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipItemProtocol.swift; sourceTree = "<group>"; };
 		C63A816D275AE335002C7F69 /* ChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipView.swift; sourceTree = "<group>"; };
 		C63A816F275AE351002C7F69 /* FlexibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleView.swift; sourceTree = "<group>"; };
-		C63A8171275AE3CD002C7F69 /* TagViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewBuilder.swift; sourceTree = "<group>"; };
+		C63A8171275AE3CD002C7F69 /* ChipBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipBuilder.swift; sourceTree = "<group>"; };
 		C63A8173275AE436002C7F69 /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
 		C63A8175275AE45E002C7F69 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		C63A8179275AEBB5002C7F69 /* TagListViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListViewVM.swift; sourceTree = "<group>"; };
+		C63A8179275AEBB5002C7F69 /* ChipGroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,15 @@
 		0446C75C2385C60D00195C17 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C63A8169275AE2BF002C7F69 /* ChipGroup.swift */,
+				C63A816B275AE2E7002C7F69 /* ChipItemProtocol.swift */,
+				C63A816D275AE335002C7F69 /* ChipView.swift */,
+				C63A816F275AE351002C7F69 /* FlexibleView.swift */,
+				C63A8171275AE3CD002C7F69 /* ChipBuilder.swift */,
+				C63A8173275AE436002C7F69 /* SizePreferenceKey.swift */,
+				C63A8175275AE45E002C7F69 /* Item.swift */,
+				C63A8179275AEBB5002C7F69 /* ChipGroupVM.swift */,
+				1BCAC2ED1C0B078F087D8DEA /* ChipItem.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -167,14 +178,6 @@
 				04A4DE22239AD0CC00AA26B7 /* LaunchScreen.storyboard */,
 				04A4DE25239AD0CC00AA26B7 /* Info.plist */,
 				58B830DA36896C518BED3456 /* ContentView.swift */,
-				C63A8169275AE2BF002C7F69 /* TagListView.swift */,
-				C63A816B275AE2E7002C7F69 /* ItemProtocol.swift */,
-				C63A816D275AE335002C7F69 /* ChipView.swift */,
-				C63A816F275AE351002C7F69 /* FlexibleView.swift */,
-				C63A8171275AE3CD002C7F69 /* TagViewBuilder.swift */,
-				C63A8173275AE436002C7F69 /* SizePreferenceKey.swift */,
-				C63A8175275AE45E002C7F69 /* Item.swift */,
-				C63A8179275AEBB5002C7F69 /* TagListViewVM.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -321,6 +324,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2992E5827902FC300C944E1 /* ChipItemProtocol.swift in Sources */,
+				F2992E5727902FBF00C944E1 /* ChipGroup.swift in Sources */,
+				F2992E5927902FC700C944E1 /* ChipView.swift in Sources */,
+				F2992E5A27902FCB00C944E1 /* FlexibleView.swift in Sources */,
+				F2992E5E27902FDC00C944E1 /* ChipGroupVM.swift in Sources */,
+				F2992E5D27902FD700C944E1 /* Item.swift in Sources */,
+				F2992E5B27902FCE00C944E1 /* ChipBuilder.swift in Sources */,
+				F2992E5C27902FD200C944E1 /* SizePreferenceKey.swift in Sources */,
+				1BCACC9ADBD629AFF02F022F /* ChipItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,17 +347,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C63A8176275AE45E002C7F69 /* Item.swift in Sources */,
 				04A4DE18239AD0C900AA26B7 /* AppDelegate.swift in Sources */,
 				04A4DE1A239AD0C900AA26B7 /* SceneDelegate.swift in Sources */,
-				C63A817A275AEBB5002C7F69 /* TagListViewVM.swift in Sources */,
-				C63A8174275AE436002C7F69 /* SizePreferenceKey.swift in Sources */,
-				C63A816E275AE335002C7F69 /* ChipView.swift in Sources */,
-				C63A816C275AE2E7002C7F69 /* ItemProtocol.swift in Sources */,
 				58B83DE02BE0B0E074465F1E /* ContentView.swift in Sources */,
-				C63A8172275AE3CD002C7F69 /* TagViewBuilder.swift in Sources */,
-				C63A8170275AE351002C7F69 /* FlexibleView.swift in Sources */,
-				C63A816A275AE2BF002C7F69 /* TagListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +562,7 @@
 		04A4DE09239ABA2400AA26B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Y3JCR9H63;
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
@@ -577,6 +582,7 @@
 		04A4DE0A239ABA2400AA26B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Y3JCR9H63;
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
@@ -596,6 +602,7 @@
 		04A4DE27239AD0CC00AA26B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HJH4SSKC5;
@@ -615,6 +622,7 @@
 		04A4DE28239AD0CC00AA26B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HJH4SSKC5;

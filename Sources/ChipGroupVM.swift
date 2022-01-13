@@ -10,6 +10,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-class TagListViewVM : ObservableObject{
-    @Published var listSelectedItems: [Item] = []
+class ChipGroupVM<T: ChipItemProtocol>: ObservableObject {
+    @Published var listSelectedItems: [T] = []
 }
