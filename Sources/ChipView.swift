@@ -20,7 +20,8 @@ public struct ChipView<T: ChipItemProtocol>: View {
     private let onItemTapped: (T) -> Void
     @State var selected = false
     @Binding private var selectedItems: [T]
-
+    @State private var defaultItems: [T]
+    
     public init(type: Selection,
                 selectedItemBackgroundColor: AnyView,
                 deselectedItemBackgroundColor: AnyView,
@@ -28,6 +29,7 @@ public struct ChipView<T: ChipItemProtocol>: View {
                 deselectedTextColor: Color,
                 customFont: Font,
                 items: [T],
+                defaultItems: [T],
                 selectedItems: Binding<[T]>,
                 onItemTapped: @escaping (T) -> Void
 
@@ -39,8 +41,10 @@ public struct ChipView<T: ChipItemProtocol>: View {
         self.deselectedTextColor = deselectedTextColor
         self.customFont = customFont
         self.items = items
+        self.defaultItems = defaultItems
         _selectedItems = selectedItems
         self.onItemTapped = onItemTapped
+        
     }
 
     public var body: some View {
@@ -63,41 +67,58 @@ public struct ChipView<T: ChipItemProtocol>: View {
                     .padding(.horizontal, 10)
                     .padding(.vertical, 3)
                     .background(
-                            selectedItems.contains(item) ? selectedItemBackgroundColor : deselectedItemBackgroundColor
+                            selectedItems.contains(item) ? selectedItemBackgroundColor
+                            : deselectedItemBackgroundColor
                     )
         }
                 .padding(.horizontal, 30)
                 .padding(.leading, 5)
                 .padding(.trailing, 10)
+                .onAppear {
+                    defaultChip(type: type)
+                }
+    }
+    private func defaultChip(type: Selection) {
+        switch type {
+        case .multi:
+            selectedItems = defaultItems
+        case .single:
+            guard defaultItems.count == 1 else{
+                return
+            }
+            selectedItems = defaultItems
+        case .none:
+            break
+        }
     }
 
     private func selectItem(_ item: T) {
-        select(type: type, item: item)
+        select(defaultItems: defaultItems, type: type, item: item )
     }
 
     func multiSelect(item: T) {
-        if selectedItems.contains(item) {
+      
+        if selectedItems.contains(item){
             selectedItems.removeAll {
                 $0.id == item.id
             }
             return
         }
-
         selectedItems.append(item)
     }
 
     func singleSelect(item: T) {
-        selectedItems.removeAll()
-        if selectedItems.contains(item) {
-            selectedItems.removeAll {
-                $0.id == item.id
+            selectedItems.removeAll()
+            if selectedItems.contains(item) {
+                selectedItems.removeAll {
+                    $0.id == item.id
+                }
+                return
             }
-            return
-        }
-        selectedItems.append(item)
+            selectedItems.append(item)
     }
 
-    func select(type: Selection, item: T) {
+    func select(defaultItems: [T],type: Selection, item: T) {
         switch type {
         case .multi:
             multiSelect(item: item)
