@@ -12,7 +12,6 @@ public typealias ChipBuilderClosure<T: ChipItemProtocol> = (_ builder: ChipBuild
 
 public class ChipBuilder<T: ChipItemProtocol> {
     public var chips: [T]
-    public var defaultChips: [T] = []
     public var selection: Selection = .single
     public var chipStyle = ChipStyle()
     public var customFont: Font? = nil

@@ -6,7 +6,7 @@
 import SwiftUI
 import ChipGroup
 
-struct ContentView: View {
+struct FirstExample: View {
     var body: some View {
         let items = [
             ChipItem(id: "1", name: "first"),
@@ -51,20 +51,13 @@ struct SecondExample: View {
 struct ThirdExample: View {
     var body: some View {
         let items = [
-            ChipItem(id: "1", name: "first",isDefault: true),
+            ChipItem(id: "1", name: "first"),
             ChipItem(id: "2", name: "sec"),
             ChipItem(id: "3", name: "third")
         ]
 
         ChipGroup<ChipItem>.build(chips: items) { builder in
-            builder.chipStyle = ChipStyle(
-                selectedBackground: AnyView(CustomView(color: .green)),
-                deselectedBackground: AnyView(CustomView(color: .yellow)),
-                    selectedTextColor: .yellow,
-                    deselectedTextColor: .green
-            )
-            builder.customFont = .system(size: 30, weight: .bold, design: .default)
-            builder.selection = .single
+
         }
     }
 }
@@ -85,7 +78,7 @@ struct CustomView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        FirstExample()
     }
 }
 

@@ -53,7 +53,6 @@ public struct ChipView<T: ChipItemProtocol>: View {
                 alignment: .leading
         ) { (item: T) in
             Button(action: {
-                print("item is", item)
                 selectItem(item)
                 onItemTapped(item)
             }, label: {
