@@ -20,7 +20,7 @@ public struct ChipView<T: ChipItemProtocol>: View {
     private let onItemTapped: (T) -> Void
     @State var selected = false
     @Binding private var selectedItems: [T]
-    @State private var defaultItems: [T]
+
     
     public init(type: Selection,
                 selectedItemBackgroundColor: AnyView,
@@ -29,7 +29,6 @@ public struct ChipView<T: ChipItemProtocol>: View {
                 deselectedTextColor: Color,
                 customFont: Font,
                 items: [T],
-                defaultItems: [T],
                 selectedItems: Binding<[T]>,
                 onItemTapped: @escaping (T) -> Void
 
@@ -41,7 +40,6 @@ public struct ChipView<T: ChipItemProtocol>: View {
         self.deselectedTextColor = deselectedTextColor
         self.customFont = customFont
         self.items = items
-        self.defaultItems = defaultItems
         _selectedItems = selectedItems
         self.onItemTapped = onItemTapped
         
@@ -98,7 +96,7 @@ public struct ChipView<T: ChipItemProtocol>: View {
     }
 
     private func selectItem(_ item: T) {
-        select(defaultItems: defaultItems, type: type, item: item )
+        select(type: type, item: item )
     }
 
     func multiSelect(item: T) {
@@ -123,7 +121,7 @@ public struct ChipView<T: ChipItemProtocol>: View {
             selectedItems.append(item)
     }
 
-    func select(defaultItems: [T],type: Selection, item: T) {
+    func select(type: Selection, item: T) {
         switch type {
         case .multi:
             multiSelect(item: item)

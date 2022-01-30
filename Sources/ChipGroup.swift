@@ -26,7 +26,6 @@ public struct ChipGroup<T: ChipItemProtocol>: View {
                     deselectedTextColor: builder.chipStyle.deselectedTextColor,
                     customFont: builder.customFont ?? .system(size: 20, weight: .light, design: .default),
                     items: builder.chips,
-                    defaultItems: builder.defaultChips,
                     selectedItems: $vm.listSelectedItems
             ) { _ in
             }

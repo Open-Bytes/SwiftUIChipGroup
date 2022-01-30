@@ -13,9 +13,7 @@ struct ContentView: View {
             ChipItem(id: "2", name: "sec"),
             ChipItem(id: "3", name: "third")
         ]
-        let defaultItems = [
-            ChipItem(id: "1", name: "first")
-        ]
+     
         ChipGroup<ChipItem>.build(chips: items) { builder in
             builder.chipStyle = ChipStyle(
                 selectedBackground: AnyView(Capsule().fill(Color.red)),
@@ -25,7 +23,6 @@ struct ContentView: View {
             )
             builder.customFont = .system(size: 30, weight: .bold, design: .default)
             builder.selection = .single
-            builder.defaultChips = defaultItems
         }
     }
 }
