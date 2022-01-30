@@ -6,11 +6,14 @@
 import Foundation
 
 public struct ChipItem: ChipItemProtocol {
+    
     public var id: String
     public var name: String
-
-    public init(id: String, name: String) {
+    public var isDefault: Bool = false
+    
+    public init(id: String, name: String,isDefault: Bool = false) {
         self.id = id
         self.name = name
+        self.isDefault = isDefault
     }
 }

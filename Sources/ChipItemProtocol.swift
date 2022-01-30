@@ -11,4 +11,5 @@ import Foundation
 public protocol ChipItemProtocol: Hashable {
     var id: String { get set }
     var name: String { get set }
+    var isDefault: Bool { get set }
 }

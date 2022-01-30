@@ -33,14 +33,11 @@ struct ContentView: View {
 struct SecondExample: View {
     var body: some View {
         let items = [
-            ChipItem(id: "1", name: "first"),
+            ChipItem(id: "1", name: "first",isDefault: true),
             ChipItem(id: "2", name: "sec"),
             ChipItem(id: "3", name: "third")
         ]
-        let defaultItems = [
-            ChipItem(id: "1", name: "first"),
-            ChipItem(id: "2", name: "sec")
-        ]
+
         ChipGroup<ChipItem>.build(chips: items) { builder in
             builder.chipStyle = ChipStyle(
                 selectedBackground: AnyView(CustomView(color: .green)),
@@ -49,8 +46,28 @@ struct SecondExample: View {
                     deselectedTextColor: .green
             )
             builder.customFont = .system(size: 30, weight: .bold, design: .default)
-            builder.selection = .multi
-            builder.defaultChips = defaultItems
+            builder.selection = .single
+        }
+    }
+}
+
+struct ThirdExample: View {
+    var body: some View {
+        let items = [
+            ChipItem(id: "1", name: "first",isDefault: true),
+            ChipItem(id: "2", name: "sec"),
+            ChipItem(id: "3", name: "third")
+        ]
+
+        ChipGroup<ChipItem>.build(chips: items) { builder in
+            builder.chipStyle = ChipStyle(
+                selectedBackground: AnyView(CustomView(color: .green)),
+                deselectedBackground: AnyView(CustomView(color: .yellow)),
+                    selectedTextColor: .yellow,
+                    deselectedTextColor: .green
+            )
+            builder.customFont = .system(size: 30, weight: .bold, design: .default)
+            builder.selection = .single
         }
     }
 }

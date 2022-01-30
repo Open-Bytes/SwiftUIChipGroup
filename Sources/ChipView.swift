@@ -81,12 +81,17 @@ public struct ChipView<T: ChipItemProtocol>: View {
     private func defaultChip(type: Selection) {
         switch type {
         case .multi:
-            selectedItems = defaultItems
-        case .single:
-            guard defaultItems.count == 1 else{
-                return
+            for item in items{
+                if item.isDefault{
+                    selectedItems.append(item)
+                }
             }
-            selectedItems = defaultItems
+        case .single:
+            for item in items{
+                if item.isDefault && selectedItems.count < 1{
+                        selectedItems.append(item)
+               }
+            }
         case .none:
             break
         }
