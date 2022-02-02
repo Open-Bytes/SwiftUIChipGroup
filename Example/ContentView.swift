@@ -28,12 +28,12 @@ struct FirstExample: View {
                 ChipItem(name: "Orange")
             ]
 
-            ChipGroup<ChipItem>(
+            ChipGroup(
                     chips: items,
                     width: UIScreen.main.bounds.width - 120,
                     selection: .single,
-                    selectedBackground: AnyView(Capsule().fill(Color.orange)),
-                    deselectedBackground: AnyView(Capsule().fill(Color.pink.opacity(0.8))),
+                    selectedBackground: Capsule().fill(Color.orange),
+                    deselectedBackground: Capsule().fill(Color.pink.opacity(0.8)),
                     selectedTextColor: .white,
                     deselectedTextColor: .white,
                     font: .system(size: 20, weight: .bold, design: .default)
@@ -49,12 +49,12 @@ struct FirstExample: View {
                 ChipItem(name: "3")
             ]
 
-            ChipGroup<ChipItem>(
+            ChipGroup(
                     chips: items,
                     width: UIScreen.main.bounds.width - 120,
                     selection: .single,
-                    selectedBackground: AnyView(CustomView(color: .green)),
-                    deselectedBackground: AnyView(CustomView(color: .yellow)),
+                    selectedBackground: CircleBackground(color: .green),
+                    deselectedBackground: CircleBackground(color: .yellow),
                     selectedTextColor: .white,
                     deselectedTextColor: .white,
                     font: .system(size: 20, weight: .bold, design: .default)
@@ -70,7 +70,7 @@ struct FirstExample: View {
                 ChipItem(name: "Third")
             ]
 
-            ChipGroup<ChipItem>(
+            ChipGroup(
                     chips: items,
                     width: UIScreen.main.bounds.width - 120,
                     selection: .multi,
@@ -81,7 +81,7 @@ struct FirstExample: View {
 
 }
 
-struct CustomView: View {
+struct CircleBackground: View {
     var color: Color
     var body: some View {
         content()
@@ -90,8 +90,7 @@ struct CustomView: View {
     private func content() -> some View {
         VStack(spacing: 6) {
             Circle().fill(color)
-                    .frame(width: 80, height: 80)
-
+                    .frame(width: 70, height: 70)
         }
     }
 }

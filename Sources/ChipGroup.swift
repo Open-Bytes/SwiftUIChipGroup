@@ -8,14 +8,16 @@
 
 import SwiftUI
 
-public struct ChipGroup<T: ChipItemProtocol>: View {
+public struct ChipGroup<T: ChipItemProtocol,
+                       SelectedBackground: View,
+                       DeselectedBackground: View>: View {
     @ObservedObject var vm: ChipGroupVM = ChipGroupVM<T>()
 
     private let width: CGFloat
     private let chips: [T]
     private let selection: Selection
-    private var selectedBackground: AnyView
-    private var deselectedBackground: AnyView
+    private var selectedBackground: SelectedBackground
+    private var deselectedBackground: DeselectedBackground
     private var selectedTextColor: Color
     private var deselectedTextColor: Color
     private let font: Font?
@@ -25,8 +27,8 @@ public struct ChipGroup<T: ChipItemProtocol>: View {
             chips: [T],
             width: CGFloat,
             selection: Selection = .single,
-            selectedBackground: AnyView = AnyView(Capsule().fill(.blue)),
-            deselectedBackground: AnyView = AnyView(Capsule().fill(.purple.opacity(0.8))),
+            selectedBackground: SelectedBackground,
+            deselectedBackground: DeselectedBackground,
             selectedTextColor: Color = .white,
             deselectedTextColor: Color = .white,
             font: Font? = nil,
@@ -50,8 +52,8 @@ public struct ChipGroup<T: ChipItemProtocol>: View {
         ChipView(
                 type: selection,
                 width: width,
-                selectedItemBackgroundColor: selectedBackground,
-                deselectedItemBackgroundColor: deselectedBackground,
+                selectedItemBackgroundColor: selectedBackground.eraseToAnyView(),
+                deselectedItemBackgroundColor: deselectedBackground.eraseToAnyView(),
                 selectedTextColor: selectedTextColor,
                 deselectedTextColor: deselectedTextColor,
                 customFont: font ?? .system(size: 20, weight: .light, design: .default),
@@ -70,5 +72,73 @@ public struct ChipGroup<T: ChipItemProtocol>: View {
             return
         }
         vm.selectedItems.append(item)
+    }
+}
+
+extension ChipGroup where SelectedBackground == AnyView {
+    public init(
+            chips: [T],
+            width: CGFloat,
+            selection: Selection = .single,
+            deselectedBackground: DeselectedBackground,
+            selectedTextColor: Color = .white,
+            deselectedTextColor: Color = .white,
+            font: Font? = nil,
+            onItemSelected: ((T) -> Void)? = nil) {
+        self.init(
+                chips: chips,
+                width: width,
+                selection: selection,
+                selectedBackground: Capsule().fill(.blue).eraseToAnyView(),
+                deselectedBackground: deselectedBackground,
+                selectedTextColor: selectedTextColor,
+                deselectedTextColor: deselectedTextColor,
+                font: font,
+                onItemSelected: onItemSelected)
+    }
+}
+
+extension ChipGroup where DeselectedBackground == AnyView {
+    public init(
+            chips: [T],
+            width: CGFloat,
+            selection: Selection = .single,
+            selectedBackground: SelectedBackground,
+            selectedTextColor: Color = .white,
+            deselectedTextColor: Color = .white,
+            font: Font? = nil,
+            onItemSelected: ((T) -> Void)? = nil) {
+        self.init(
+                chips: chips,
+                width: width,
+                selection: selection,
+                selectedBackground: selectedBackground,
+                deselectedBackground: Capsule().fill(.purple.opacity(0.8)).eraseToAnyView(),
+                selectedTextColor: selectedTextColor,
+                deselectedTextColor: deselectedTextColor,
+                font: font,
+                onItemSelected: onItemSelected)
+    }
+}
+
+extension ChipGroup where SelectedBackground == AnyView, DeselectedBackground == AnyView {
+    public init(
+            chips: [T],
+            width: CGFloat,
+            selection: Selection = .single,
+            selectedTextColor: Color = .white,
+            deselectedTextColor: Color = .white,
+            font: Font? = nil,
+            onItemSelected: ((T) -> Void)? = nil) {
+        self.init(
+                chips: chips,
+                width: width,
+                selection: selection,
+                selectedBackground: Capsule().fill(.blue).eraseToAnyView(),
+                deselectedBackground: Capsule().fill(.purple.opacity(0.8)).eraseToAnyView(),
+                selectedTextColor: selectedTextColor,
+                deselectedTextColor: deselectedTextColor,
+                font: font,
+                onItemSelected: onItemSelected)
     }
 }
