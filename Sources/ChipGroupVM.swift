@@ -11,5 +11,5 @@ import SwiftUI
 import Combine
 
 class ChipGroupVM<T: ChipItemProtocol>: ObservableObject {
-    @Published var listSelectedItems: [T] = []
+    @Published var selectedItems: [T] = []
 }

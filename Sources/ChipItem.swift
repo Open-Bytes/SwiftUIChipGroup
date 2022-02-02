@@ -5,15 +5,15 @@
 
 import Foundation
 
-public struct ChipItem: ChipItemProtocol {
-    
-    public var id: String
+public class ChipItem: ChipItemProtocol {
+    public var id: String = UUID().uuidString
     public var name: String
-    public var isDefault: Bool = false
-    
-    public init(id: String, name: String,isDefault: Bool = false) {
-        self.id = id
+    public var isSelected: Bool = false
+
+    public init(
+            name: String,
+            isSelected: Bool = false) {
         self.name = name
-        self.isDefault = isDefault
+        self.isSelected = isSelected
     }
 }

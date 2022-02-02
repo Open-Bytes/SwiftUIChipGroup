@@ -8,6 +8,18 @@
 
 import SwiftUI
 
+struct ItemContainer<T: Identifiable>: Hashable where T: AnyObject {
+    let item: T
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(item))
+    }
+
+    static func ==(lhs: ItemContainer<T>, rhs: ItemContainer<T>) -> Bool {
+        lhs.item.id == rhs.item.id
+    }
+}
+
 public struct FlexibleView<Data: Collection, Content: View>: View where Data.Element: Hashable {
     let availableWidth: CGFloat
     let data: Data
@@ -16,11 +28,12 @@ public struct FlexibleView<Data: Collection, Content: View>: View where Data.Ele
     let content: (Data.Element) -> Content
     @State var elementsSize: [Data.Element: CGSize] = [:]
 
-    public init(availableWidth: CGFloat,
-                data: Data,
-                spacing: CGFloat,
-                alignment: HorizontalAlignment,
-                content: @escaping (Data.Element) -> Content) {
+    public init(
+            availableWidth: CGFloat,
+            data: Data,
+            spacing: CGFloat,
+            alignment: HorizontalAlignment,
+            content: @escaping (Data.Element) -> Content) {
         self.availableWidth = availableWidth
         self.data = data
         self.spacing = spacing

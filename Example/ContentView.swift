@@ -8,59 +8,79 @@ import ChipGroup
 
 struct FirstExample: View {
     var body: some View {
-        let items = [
-            ChipItem(id: "1", name: "first"),
-            ChipItem(id: "2", name: "sec"),
-            ChipItem(id: "3", name: "third")
-        ]
-     
-        ChipGroup<ChipItem>.build(chips: items) { builder in
-            builder.chipStyle = ChipStyle(
-                selectedBackground: AnyView(Capsule().fill(Color.red)),
-                deselectedBackground: AnyView(Capsule().fill(Color.blue.opacity(0.2))),
+        ScrollView {
+            VStack(spacing: 50) {
+                Spacer().frame(height: 100)
+                ChipGroup1()
+                ChipGroup2()
+                ChipGroup3()
+            }
+        }
+    }
+
+    private func ChipGroup1() -> some View {
+        Group {
+            let items = [
+                ChipItem(name: "Reg"),
+                ChipItem(name: "Green"),
+                ChipItem(name: "Blue"),
+                ChipItem(name: "Purple"),
+                ChipItem(name: "Orange")
+            ]
+
+            ChipGroup<ChipItem>(
+                    chips: items,
+                    width: UIScreen.main.bounds.width - 120,
+                    selection: .single,
+                    selectedBackground: AnyView(Capsule().fill(Color.orange)),
+                    deselectedBackground: AnyView(Capsule().fill(Color.pink.opacity(0.8))),
                     selectedTextColor: .white,
-                    deselectedTextColor: .red
+                    deselectedTextColor: .white,
+                    font: .system(size: 20, weight: .bold, design: .default)
             )
-            builder.customFont = .system(size: 30, weight: .bold, design: .default)
-            builder.selection = .single
         }
     }
-}
 
-struct SecondExample: View {
-    var body: some View {
-        let items = [
-            ChipItem(id: "1", name: "first",isDefault: true),
-            ChipItem(id: "2", name: "sec"),
-            ChipItem(id: "3", name: "third")
-        ]
+    private func ChipGroup2() -> some View {
+        Group {
+            let items = [
+                ChipItem(name: "1", isSelected: true),
+                ChipItem(name: "2"),
+                ChipItem(name: "3")
+            ]
 
-        ChipGroup<ChipItem>.build(chips: items) { builder in
-            builder.chipStyle = ChipStyle(
-                selectedBackground: AnyView(CustomView(color: .green)),
-                deselectedBackground: AnyView(CustomView(color: .yellow)),
-                    selectedTextColor: .yellow,
-                    deselectedTextColor: .green
+            ChipGroup<ChipItem>(
+                    chips: items,
+                    width: UIScreen.main.bounds.width - 120,
+                    selection: .single,
+                    selectedBackground: AnyView(CustomView(color: .green)),
+                    deselectedBackground: AnyView(CustomView(color: .yellow)),
+                    selectedTextColor: .white,
+                    deselectedTextColor: .white,
+                    font: .system(size: 20, weight: .bold, design: .default)
             )
-            builder.customFont = .system(size: 30, weight: .bold, design: .default)
-            builder.selection = .single
         }
     }
-}
 
-struct ThirdExample: View {
-    var body: some View {
-        let items = [
-            ChipItem(id: "1", name: "first"),
-            ChipItem(id: "2", name: "sec"),
-            ChipItem(id: "3", name: "third")
-        ]
+    private func ChipGroup3() -> some View {
+        Group {
+            let items = [
+                ChipItem(name: "First"),
+                ChipItem(name: "Second"),
+                ChipItem(name: "Third")
+            ]
 
-        ChipGroup<ChipItem>.build(chips: items) { builder in
-
+            ChipGroup<ChipItem>(
+                    chips: items,
+                    width: UIScreen.main.bounds.width - 120,
+                    selection: .multi,
+                    font: .system(size: 20, weight: .bold, design: .default)
+            )
         }
     }
+
 }
+
 struct CustomView: View {
     var color: Color
     var body: some View {
@@ -70,8 +90,8 @@ struct CustomView: View {
     private func content() -> some View {
         VStack(spacing: 6) {
             Circle().fill(color)
-                .frame(width: 80, height: 80)
-                
+                    .frame(width: 80, height: 80)
+
         }
     }
 }

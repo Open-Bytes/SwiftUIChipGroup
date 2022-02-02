@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol ChipItemProtocol: Hashable {
+public protocol ChipItemProtocol: Identifiable where Self: AnyObject {
     var id: String { get set }
     var name: String { get set }
-    var isDefault: Bool { get set }
+    var isSelected: Bool { get set }
 }

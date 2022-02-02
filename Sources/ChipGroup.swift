@@ -9,42 +9,66 @@
 import SwiftUI
 
 public struct ChipGroup<T: ChipItemProtocol>: View {
-    let builder: ChipBuilder<T>
     @ObservedObject var vm: ChipGroupVM = ChipGroupVM<T>()
+
+    private let width: CGFloat
+    private let chips: [T]
+    private let selection: Selection
+    private var selectedBackground: AnyView
+    private var deselectedBackground: AnyView
+    private var selectedTextColor: Color
+    private var deselectedTextColor: Color
+    private let font: Font?
+    private let onItemSelected: ((T) -> Void)?
+
+    public init(
+            chips: [T],
+            width: CGFloat,
+            selection: Selection = .single,
+            selectedBackground: AnyView = AnyView(Capsule().fill(.blue)),
+            deselectedBackground: AnyView = AnyView(Capsule().fill(.purple.opacity(0.8))),
+            selectedTextColor: Color = .white,
+            deselectedTextColor: Color = .white,
+            font: Font? = nil,
+            onItemSelected: ((T) -> Void)? = nil) {
+        self.chips = chips
+        self.width = width
+        self.selection = selection
+        self.selectedBackground = selectedBackground
+        self.deselectedBackground = deselectedBackground
+        self.selectedTextColor = selectedTextColor
+        self.deselectedTextColor = deselectedTextColor
+        self.font = font
+        self.onItemSelected = onItemSelected
+    }
 
     public var body: some View {
         ChipItemsView()
     }
 
     private func ChipItemsView() -> some View {
-        Group {
-            ChipView(
-                    type: builder.selection,
-                    selectedItemBackgroundColor: builder.chipStyle.selectedBackground,
-                    deselectedItemBackgroundColor: builder.chipStyle.deselectedBackground,
-                    selectedTextColor: builder.chipStyle.selectedTextColor,
-                    deselectedTextColor: builder.chipStyle.deselectedTextColor,
-                    customFont: builder.customFont ?? .system(size: 20, weight: .light, design: .default),
-                    items: builder.chips,
-                    selectedItems: $vm.listSelectedItems
-            ) { _ in
-            }
+        ChipView(
+                type: selection,
+                width: width,
+                selectedItemBackgroundColor: selectedBackground,
+                deselectedItemBackgroundColor: deselectedBackground,
+                selectedTextColor: selectedTextColor,
+                deselectedTextColor: deselectedTextColor,
+                customFont: font ?? .system(size: 20, weight: .light, design: .default),
+                items: chips
+        ) { item in
+            updateSelectedItems(item: item)
+            onItemSelected?(item)
         }
     }
 
-    public static func build(
-            chips: [T],
-            build: @escaping ChipBuilderClosure<T>) -> ChipGroup {
-        let builder = ChipBuilder(chips: chips)
-        build(builder)
-        return ChipGroup(builder: builder)
+    private func updateSelectedItems(item: T) {
+        guard !item.isSelected else {
+            vm.selectedItems.removeAll {
+                $0.id == item.id
+            }
+            return
+        }
+        vm.selectedItems.append(item)
     }
-}
-
-public extension View {
-
-    func eraseToAnyView() -> AnyView {
-        AnyView(self)
-    }
-
 }

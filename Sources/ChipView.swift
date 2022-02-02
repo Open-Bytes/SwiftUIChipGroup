@@ -9,7 +9,7 @@
 import SwiftUI
 
 public struct ChipView<T: ChipItemProtocol>: View {
-
+    private let width: CGFloat
     @State private var selectedItemBackgroundColor: AnyView
     @State private var deselectedItemBackgroundColor: AnyView
     @State private var selectedTextColor: Color
@@ -19,20 +19,19 @@ public struct ChipView<T: ChipItemProtocol>: View {
     private var type: Selection
     private let onItemTapped: (T) -> Void
     @State var selected = false
-    @Binding private var selectedItems: [T]
 
-    
-    public init(type: Selection,
-                selectedItemBackgroundColor: AnyView,
-                deselectedItemBackgroundColor: AnyView,
-                selectedTextColor: Color,
-                deselectedTextColor: Color,
-                customFont: Font,
-                items: [T],
-                selectedItems: Binding<[T]>,
-                onItemTapped: @escaping (T) -> Void
-
+    public init(
+            type: Selection,
+            width: CGFloat,
+            selectedItemBackgroundColor: AnyView,
+            deselectedItemBackgroundColor: AnyView,
+            selectedTextColor: Color,
+            deselectedTextColor: Color,
+            customFont: Font,
+            items: [T],
+            onItemTapped: @escaping (T) -> Void
     ) {
+        self.width = width
         self.type = type
         self.selectedItemBackgroundColor = selectedItemBackgroundColor
         self.deselectedItemBackgroundColor = deselectedItemBackgroundColor
@@ -40,94 +39,103 @@ public struct ChipView<T: ChipItemProtocol>: View {
         self.deselectedTextColor = deselectedTextColor
         self.customFont = customFont
         self.items = items
-        _selectedItems = selectedItems
         self.onItemTapped = onItemTapped
-        
     }
 
     public var body: some View {
         FlexibleView(
-                availableWidth: UIScreen.main.bounds.width - 120,
-                data: items,
+                availableWidth: width,
+                data: items.map {
+                    ItemContainer(item: $0)
+                },
                 spacing: 15,
                 alignment: .leading
-        ) { (item: T) in
-            Button(action: {
-                selectItem(item)
-                onItemTapped(item)
-            }, label: {
-                Text(item.name)
-                        .padding(.all, 5)
-                        .foregroundColor(selectedItems.contains(item) ? selectedTextColor : deselectedTextColor)
-                        .font(customFont)
-            })
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 3)
-                    .background(
-                            selectedItems.contains(item) ? selectedItemBackgroundColor
-                            : deselectedItemBackgroundColor
-                    )
+        ) { item in
+            ItemView(item: item.item)
         }
                 .padding(.horizontal, 30)
                 .padding(.leading, 5)
                 .padding(.trailing, 10)
-                .onAppear {
-                    defaultChip(type: type)
-                }
     }
-    private func defaultChip(type: Selection) {
-        switch type {
-        case .multi:
-            for item in items{
-                if item.isDefault{
-                    selectedItems.append(item)
-                }
+
+    private func ItemView(item: T) -> some View {
+        Group {
+
+            ChipItemView<T>(
+                    item: item,
+                    isSelected: item.isSelected,
+                    selectedTextColor: selectedTextColor,
+                    deselectedTextColor: deselectedTextColor,
+                    selectedItemBackgroundColor: selectedItemBackgroundColor,
+                    deselectedItemBackgroundColor: deselectedItemBackgroundColor,
+                    customFont: customFont) { item in
+                select(item: item)
+                onItemTapped(item)
             }
-        case .single:
-            for item in items{
-                if item.isDefault && selectedItems.count < 1{
-                        selectedItems.append(item)
-               }
-            }
-        case .none:
-            break
         }
     }
 
-    private func selectItem(_ item: T) {
-        select(type: type, item: item )
-    }
-
-    func multiSelect(item: T) {
-      
-        if selectedItems.contains(item){
-            selectedItems.removeAll {
-                $0.id == item.id
+    private func select(item: T) {
+        switch type {
+        case .multi:
+            break
+        case .single:
+            for item in items {
+                item.isSelected = false
             }
+        case .none:
             return
         }
-        selectedItems.append(item)
+        guard !item.isSelected else {
+            item.isSelected = false
+            return
+        }
+        item.isSelected = true
+    }
+}
+
+struct ChipItemView<T: ChipItemProtocol>: View {
+    let item: T
+    let isSelected: Bool
+    let selectedTextColor: Color
+    let deselectedTextColor: Color
+    let selectedItemBackgroundColor: AnyView
+    let deselectedItemBackgroundColor: AnyView
+    let customFont: Font
+    let onItemSelected: (T) -> Void
+
+    init(item: T,
+         isSelected: Bool,
+         selectedTextColor: Color,
+         deselectedTextColor: Color,
+         selectedItemBackgroundColor: AnyView,
+         deselectedItemBackgroundColor: AnyView,
+         customFont: Font,
+         onItemSelected: @escaping (T) -> ()) {
+        self.item = item
+        self.isSelected = isSelected
+        self.selectedTextColor = selectedTextColor
+        self.deselectedTextColor = deselectedTextColor
+        self.selectedItemBackgroundColor = selectedItemBackgroundColor
+        self.deselectedItemBackgroundColor = deselectedItemBackgroundColor
+        self.customFont = customFont
+        self.onItemSelected = onItemSelected
     }
 
-    func singleSelect(item: T) {
-            selectedItems.removeAll()
-            if selectedItems.contains(item) {
-                selectedItems.removeAll {
-                    $0.id == item.id
-                }
-                return
-            }
-            selectedItems.append(item)
-    }
-
-    func select(type: Selection, item: T) {
-        switch type {
-        case .multi:
-            multiSelect(item: item)
-        case .single:
-            singleSelect(item: item)
-        case .none:
-            break
+    var body: some View {
+        ZStack {
+            isSelected ? selectedItemBackgroundColor : deselectedItemBackgroundColor
+            Button(action: {
+                onItemSelected(item)
+            }, label: {
+                Text(item.name)
+                        .padding(.all, 5)
+                        .foregroundColor(isSelected ? selectedTextColor : deselectedTextColor)
+                        .font(customFont)
+            })
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 3)
         }
     }
+
 }
