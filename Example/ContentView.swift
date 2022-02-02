@@ -21,7 +21,7 @@ struct FirstExample: View {
     private func ChipGroup1() -> some View {
         Group {
             let items = [
-                ChipItem(name: "Reg"),
+                ChipItem(name: "Red"),
                 ChipItem(name: "Green"),
                 ChipItem(name: "Blue"),
                 ChipItem(name: "Purple"),
@@ -31,7 +31,7 @@ struct FirstExample: View {
             ChipGroup(
                     chips: items,
                     width: UIScreen.main.bounds.width - 120,
-                    selection: .single,
+                    selection: .none,
                     selectedBackground: Capsule().fill(Color.orange),
                     deselectedBackground: Capsule().fill(Color.pink.opacity(0.8)),
                     selectedTextColor: .white,
