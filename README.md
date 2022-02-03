@@ -107,8 +107,23 @@ ChipGroup(
     font: .system(size: 20, weight: .bold, design: .default)
 )
 ```
+3. You can provide your own custom background through this code:
 
+```swift
+struct CircleBackground: View {
+    var color: Color
+    var body: some View {
+        content()
+    }
 
+    private func content() -> some View {
+        VStack(spacing: 6) {
+            Circle().fill(color)
+                    .frame(width: 70, height: 70)
+        }
+    }
+}
+```
 ---
 
 ## Demo
