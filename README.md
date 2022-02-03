@@ -14,7 +14,7 @@
 </a></p>
 
 <p align="center"><a href="https://github.com/Open-Bytes/SwiftUIChipGroup">
-<img src="https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/blob/chip_group.PNG?raw=true" alt="SwiftUINavigator Diagram" width="540" height="1170" border="#1111"/>
+<img src="https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/blob/chip_group.PNG?raw=true" alt="SwiftUINavigator Diagram" width="540" height="580" border="#1111"/>
 </a></p>
 
 ![swift v5.3](https://img.shields.io/badge/swift-v5.3-orange.svg)
