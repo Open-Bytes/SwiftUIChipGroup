@@ -107,7 +107,10 @@ ChipGroup(
     font: .system(size: 20, weight: .bold, design: .default)
 )
 ```
-3. You can provide your own custom background through this code:
+---
+## :zap: Custom background
+
+You can provide your own custom background through this code:
 
 ```swift
 struct CircleBackground: View {
@@ -125,7 +128,6 @@ struct CircleBackground: View {
 }
 ```
 ---
-
 ## Demo
 
  [ChipGroup](https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/Example/ContentView.swift)  
