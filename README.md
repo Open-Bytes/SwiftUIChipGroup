@@ -9,6 +9,12 @@
 
 **ChipGroup** is a simple and highly customizable chip group for iOS, in SwiftUI.
 
+<img src="https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/blob/chip_group.gif?raw=true" alt="SwiftUINavigator Demo" width="450" height="450" border="#1111"/>
+
+
+<img src="https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/blob/chip_group.PNG?raw=true" alt="SwiftUINavigator Diagram" width="550" height="550" border="#1111"/>
+
+
 ![swift v5.3](https://img.shields.io/badge/swift-v5.3-orange.svg)
 ![iOS 13](https://img.shields.io/badge/iOS-13.0+-865EFC.svg)
 ![macOS](https://img.shields.io/badge/macOS-10.15+-179AC8.svg)
