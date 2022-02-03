@@ -17,6 +17,8 @@
 		1BCAC962ECD81B503D228D8E /* View+EraseToAnyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCAC182213310C845366EC2 /* View+EraseToAnyView.swift */; };
 		1BCACC9ADBD629AFF02F022F /* ChipItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCAC2ED1C0B078F087D8DEA /* ChipItem.swift */; };
 		58B83DE02BE0B0E074465F1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B830DA36896C518BED3456 /* ContentView.swift */; };
+		C628588827AC65BC006EBFB8 /* chip_group.gif in Resources */ = {isa = PBXBuildFile; fileRef = C628588627AC65BC006EBFB8 /* chip_group.gif */; };
+		C628588927AC65BC006EBFB8 /* chip_group.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C628588727AC65BC006EBFB8 /* chip_group.PNG */; };
 		F2992E5727902FBF00C944E1 /* ChipGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A8169275AE2BF002C7F69 /* ChipGroup.swift */; };
 		F2992E5827902FC300C944E1 /* ChipItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A816B275AE2E7002C7F69 /* ChipItemProtocol.swift */; };
 		F2992E5927902FC700C944E1 /* ChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A816D275AE335002C7F69 /* ChipView.swift */; };
@@ -79,6 +81,8 @@
 		1BCAC26B82EF6DA8F8BE186D /* ChipGroup.podspec */ = {isa = PBXFileReference; lastKnownFileType = file.podspec; path = ChipGroup.podspec; sourceTree = "<group>"; };
 		1BCAC2ED1C0B078F087D8DEA /* ChipItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipItem.swift; sourceTree = "<group>"; };
 		58B830DA36896C518BED3456 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C628588627AC65BC006EBFB8 /* chip_group.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = chip_group.gif; sourceTree = "<group>"; };
+		C628588727AC65BC006EBFB8 /* chip_group.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chip_group.PNG; sourceTree = "<group>"; };
 		C63A8169275AE2BF002C7F69 /* ChipGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroup.swift; sourceTree = "<group>"; };
 		C63A816B275AE2E7002C7F69 /* ChipItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipItemProtocol.swift; sourceTree = "<group>"; };
 		C63A816D275AE335002C7F69 /* ChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipView.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 		0446C6192385B00E00195C17 = {
 			isa = PBXGroup;
 			children = (
+				C628588527AC65BC006EBFB8 /* blob */,
 				04A4DE16239AD0C900AA26B7 /* Example */,
 				0446C75C2385C60D00195C17 /* Sources */,
 				04A4DE01239ABA2400AA26B7 /* Tests */,
@@ -180,6 +185,15 @@
 				58B830DA36896C518BED3456 /* ContentView.swift */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		C628588527AC65BC006EBFB8 /* blob */ = {
+			isa = PBXGroup;
+			children = (
+				C628588627AC65BC006EBFB8 /* chip_group.gif */,
+				C628588727AC65BC006EBFB8 /* chip_group.PNG */,
+			);
+			path = blob;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +312,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C628588827AC65BC006EBFB8 /* chip_group.gif in Resources */,
+				C628588927AC65BC006EBFB8 /* chip_group.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
