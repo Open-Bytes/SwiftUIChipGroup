@@ -14,7 +14,7 @@
 </a></p>
 
 <p align="center"><a href="https://github.com/Open-Bytes/SwiftUIChipGroup">
-<img src="https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/blob/chip_group.PNG?raw=true" alt="SwiftUINavigator Diagram" border="#1111"/>
+<img src="https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/blob/chip_group.PNG?raw=true" alt="SwiftUINavigator Diagram" width="540" height="1170" border="#1111"/>
 </a></p>
 
 ![swift v5.3](https://img.shields.io/badge/swift-v5.3-orange.svg)
@@ -79,33 +79,32 @@ Then simply `import ChipGroup` wherever you’d like to use the library.
 1. Import `ChipGroup`.
 
 ```swift
-import Swift
-ChipGroup
+import ChipGroup
 ```
 
 2. Create an array of `ChipItem` that conform to `ChipItemProtocol`.
 
 ```swift
 let items = [
-ChipItem(name: "Red"),
-ChipItem(name: "Green"),
-ChipItem(name: "Blue"),
-ChipItem(name: "Purple"),
-ChipItem(name: "Orange")
+    ChipItem(name: "Red"),
+    ChipItem(name: "Green"),
+    ChipItem(name: "Blue"),
+    ChipItem(name: "Purple"),
+    ChipItem(name: "Orange")
 ]
 ```
 3. You can add chip to the ChipGroup , or set custom background for both selected and deselected state, Selection type, Size and font through this code:
 
 ```swift
 ChipGroup(
-chips: items,
-width: UIScreen.main.bounds.width - 120,
-selection: .none,
-selectedBackground: Capsule().fill(Color.orange),
-deselectedBackground: Capsule().fill(Color.pink.opacity(0.8)),
-selectedTextColor: .white,
-deselectedTextColor: .white,
-font: .system(size: 20, weight: .bold, design: .default)
+    chips: items,
+    width: UIScreen.main.bounds.width - 120,
+    selection: .none,
+    selectedBackground: Capsule().fill(Color.orange),
+    deselectedBackground: Capsule().fill(Color.pink.opacity(0.8)),
+    selectedTextColor: .white,
+    deselectedTextColor: .white,
+    font: .system(size: 20, weight: .bold, design: .default)
 )
 ```
 
