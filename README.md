@@ -10,11 +10,11 @@
 **ChipGroup** is a simple and highly customizable chip group for iOS, in SwiftUI.
 
 <p align="center"><a href="https://github.com/Open-Bytes/SwiftUIChipGroup">
-<img src="https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/blob/chip_group.gif?raw=true" alt="SwiftUINavigator Demo" width="480" height="480" border="#1111"/>
+<img src="https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/blob/chip_group.gif?raw=true" alt="SwiftUINavigator Demo" width="400" height="480" border="#1111"/>
 </a></p>
 
 <p align="center"><a href="https://github.com/Open-Bytes/SwiftUIChipGroup">
-<img src="https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/blob/chip_group.PNG?raw=true" alt="SwiftUINavigator Diagram" width="350" height="350" border="#1111"/>
+<img src="https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/blob/chip_group.PNG?raw=true" alt="SwiftUINavigator Diagram" width="300" height="480" border="#1111"/>
 </a></p>
 
 ![swift v5.3](https://img.shields.io/badge/swift-v5.3-orange.svg)
