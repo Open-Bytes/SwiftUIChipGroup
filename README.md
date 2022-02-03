@@ -14,7 +14,7 @@
 </a></p>
 
 <p align="center"><a href="https://github.com/Open-Bytes/SwiftUIChipGroup">
-<img src="https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/blob/chip_group.PNG?raw=true" alt="SwiftUINavigator Diagram" width="300" height="480" border="#1111"/>
+<img src="https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/blob/chip_group.PNG?raw=true" alt="SwiftUINavigator Diagram" border="#1111"/>
 </a></p>
 
 ![swift v5.3](https://img.shields.io/badge/swift-v5.3-orange.svg)
@@ -48,11 +48,11 @@ ChipGroup` as a package dependency in your `Package.swift` file:
 
 ```swift
 let package = Package(
-    //...
-    dependencies: [
-      .package(url: "https://github.com/Open-Bytes/ChipGroup", .upToNextMajor(from: "0.1.0"))
-    ]
-    //...
+//...
+dependencies: [
+.package(url: "https://github.com/Open-Bytes/ChipGroup", .upToNextMajor(from: "0.1.0"))
+]
+//...
 )
 ```
 
@@ -60,14 +60,14 @@ From there, refer to `ChipGroup` in target dependencies:
 
 ```swift
 targets: [
-    .target(
-        name: "YourLibrary",
-        dependencies: [
-          "ChipGroup"
-        ]
-        //...
-    ),
-   // ...
+.target(
+name: "YourLibrary",
+dependencies: [
+"ChipGroup"
+]
+//...
+),
+// ...
 ]
 ```
 
@@ -75,9 +75,46 @@ Then simply `import ChipGroup` wherever you’d like to use the library.
 
 ---
 
+## :zap: Usage
+1. Import `ChipGroup`.
+
+```swift
+import Swift
+ChipGroup
+```
+
+2. Create an array of `ChipItem` that conform to `ChipItemProtocol`.
+
+```swift
+let items = [
+ChipItem(name: "Red"),
+ChipItem(name: "Green"),
+ChipItem(name: "Blue"),
+ChipItem(name: "Purple"),
+ChipItem(name: "Orange")
+]
+```
+3. You can add chip to the ChipGroup , or set custom background for both selected and deselected state, Selection type, Size and font through this code:
+
+```swift
+ChipGroup(
+chips: items,
+width: UIScreen.main.bounds.width - 120,
+selection: .none,
+selectedBackground: Capsule().fill(Color.orange),
+deselectedBackground: Capsule().fill(Color.pink.opacity(0.8)),
+selectedTextColor: .white,
+deselectedTextColor: .white,
+font: .system(size: 20, weight: .bold, design: .default)
+)
+```
+
+
+---
+
 ## Demo
 
-[ChipGroup](https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/Example/ContentView.swift)  
+ [ChipGroup](https://github.com/Open-Bytes/SwiftUIChipGroup/blob/master/Example/ContentView.swift)  
 is an example app demonstrates how you can use the library.
 
 ---
@@ -93,16 +130,16 @@ is an example app demonstrates how you can use the library.
 **Apache License**, Version 2.0
 
 <details>
-    <summary>
-        click to reveal License
-    </summary>
+<summary>
+click to reveal License
+</summary>
 
 ```txt
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-   https://www.apache.org/licenses/LICENSE-2.0
+https://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
