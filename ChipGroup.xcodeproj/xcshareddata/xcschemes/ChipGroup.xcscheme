@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "04A4DDD9239AB0C800AA26B7"
-               BuildableName = "ChipGroup.framework"
-               BlueprintName = "ChipGroup"
+               BuildableName = "SwiftUIChipGroup.framework"
+               BlueprintName = "SwiftUIChipGroup"
                ReferencedContainer = "container:ChipGroup.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -51,8 +51,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "04A4DDD9239AB0C800AA26B7"
-            BuildableName = "ChipGroup.framework"
-            BlueprintName = "ChipGroup"
+            BuildableName = "SwiftUIChipGroup.framework"
+            BlueprintName = "SwiftUIChipGroup"
             ReferencedContainer = "container:ChipGroup.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

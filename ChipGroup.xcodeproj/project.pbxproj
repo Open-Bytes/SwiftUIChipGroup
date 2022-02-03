@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04A4DE05239ABA2400AA26B7 /* ChipGroup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A4DDDA239AB0C800AA26B7 /* ChipGroup.framework */; };
+		04A4DE05239ABA2400AA26B7 /* SwiftUIChipGroup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A4DDDA239AB0C800AA26B7 /* SwiftUIChipGroup.framework */; };
 		04A4DE18239AD0C900AA26B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4DE17239AD0C900AA26B7 /* AppDelegate.swift */; };
 		04A4DE1A239AD0C900AA26B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4DE19239AD0C900AA26B7 /* SceneDelegate.swift */; };
 		04A4DE21239AD0CC00AA26B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A4DE20239AD0CC00AA26B7 /* Assets.xcassets */; };
 		04A4DE24239AD0CC00AA26B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A4DE22239AD0CC00AA26B7 /* LaunchScreen.storyboard */; };
-		04A4DE2B239AD4A900AA26B7 /* ChipGroup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A4DDDA239AB0C800AA26B7 /* ChipGroup.framework */; };
-		04A4DE2C239AD4A900AA26B7 /* ChipGroup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04A4DDDA239AB0C800AA26B7 /* ChipGroup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04A4DE2B239AD4A900AA26B7 /* SwiftUIChipGroup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A4DDDA239AB0C800AA26B7 /* SwiftUIChipGroup.framework */; };
+		04A4DE2C239AD4A900AA26B7 /* SwiftUIChipGroup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04A4DDDA239AB0C800AA26B7 /* SwiftUIChipGroup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1BCAC962ECD81B503D228D8E /* View+EraseToAnyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCAC182213310C845366EC2 /* View+EraseToAnyView.swift */; };
 		1BCACC9ADBD629AFF02F022F /* ChipItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCAC2ED1C0B078F087D8DEA /* ChipItem.swift */; };
 		58B83DE02BE0B0E074465F1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B830DA36896C518BED3456 /* ContentView.swift */; };
@@ -57,7 +57,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				04A4DE2C239AD4A900AA26B7 /* ChipGroup.framework in Embed Frameworks */,
+				04A4DE2C239AD4A900AA26B7 /* SwiftUIChipGroup.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,7 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		04A4DDDA239AB0C800AA26B7 /* ChipGroup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChipGroup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04A4DDDA239AB0C800AA26B7 /* SwiftUIChipGroup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUIChipGroup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A4DE00239ABA2400AA26B7 /* ChipGroupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChipGroupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A4DE15239AD0C900AA26B7 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A4DE17239AD0C900AA26B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04A4DE05239ABA2400AA26B7 /* ChipGroup.framework in Frameworks */,
+				04A4DE05239ABA2400AA26B7 /* SwiftUIChipGroup.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04A4DE2B239AD4A900AA26B7 /* ChipGroup.framework in Frameworks */,
+				04A4DE2B239AD4A900AA26B7 /* SwiftUIChipGroup.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +132,7 @@
 		0446C6232385B00E00195C17 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04A4DDDA239AB0C800AA26B7 /* ChipGroup.framework */,
+				04A4DDDA239AB0C800AA26B7 /* SwiftUIChipGroup.framework */,
 				04A4DE00239ABA2400AA26B7 /* ChipGroupTests.xctest */,
 				04A4DE15239AD0C900AA26B7 /* Example.app */,
 			);
@@ -195,9 +195,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		04A4DDD9239AB0C800AA26B7 /* ChipGroup */ = {
+		04A4DDD9239AB0C800AA26B7 /* SwiftUIChipGroup */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04A4DDF1239AB0C900AA26B7 /* Build configuration list for PBXNativeTarget "ChipGroup" */;
+			buildConfigurationList = 04A4DDF1239AB0C900AA26B7 /* Build configuration list for PBXNativeTarget "SwiftUIChipGroup" */;
 			buildPhases = (
 				04A4DDD5239AB0C800AA26B7 /* Headers */,
 				04A4DDD6239AB0C800AA26B7 /* Sources */,
@@ -208,9 +208,9 @@
 			);
 			dependencies = (
 			);
-			name = ChipGroup;
+			name = SwiftUIChipGroup;
 			productName = ChipGroup;
-			productReference = 04A4DDDA239AB0C800AA26B7 /* ChipGroup.framework */;
+			productReference = 04A4DDDA239AB0C800AA26B7 /* SwiftUIChipGroup.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		04A4DDFF239ABA2400AA26B7 /* ChipGroupTests */ = {
@@ -286,7 +286,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04A4DDD9239AB0C800AA26B7 /* ChipGroup */,
+				04A4DDD9239AB0C800AA26B7 /* SwiftUIChipGroup */,
 				04A4DDFF239ABA2400AA26B7 /* ChipGroupTests */,
 				04A4DE14239AD0C900AA26B7 /* Example */,
 			);
@@ -363,12 +363,12 @@
 		};
 		04A4DE07239ABA2400AA26B7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 04A4DDD9239AB0C800AA26B7 /* ChipGroup */;
+			target = 04A4DDD9239AB0C800AA26B7 /* SwiftUIChipGroup */;
 			targetProxy = 04A4DE06239ABA2400AA26B7 /* PBXContainerItemProxy */;
 		};
 		04A4DE2A239AD49B00AA26B7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 04A4DDD9239AB0C800AA26B7 /* ChipGroup */;
+			target = 04A4DDD9239AB0C800AA26B7 /* SwiftUIChipGroup */;
 			targetProxy = 04A4DE29239AD49B00AA26B7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -651,7 +651,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		04A4DDF1239AB0C900AA26B7 /* Build configuration list for PBXNativeTarget "ChipGroup" */ = {
+		04A4DDF1239AB0C900AA26B7 /* Build configuration list for PBXNativeTarget "SwiftUIChipGroup" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04A4DDF2239AB0C900AA26B7 /* Debug */,

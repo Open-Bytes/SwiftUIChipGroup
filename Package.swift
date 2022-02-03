@@ -1,4 +1,5 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.3
+
 import PackageDescription
 
 let buildTests = false
@@ -6,17 +7,21 @@ let buildTests = false
 let package = Package(
         name: "SwiftUIChipGroup",
         platforms: [
-            .macOS(.v10_15), .iOS(.v13), .tvOS(.v13)
+            .macOS(.v10_15),
+            .iOS(.v13),
+            .tvOS(.v13),
         ],
         products: [
-            .library(name: "ChipGroup", targets: ["ChipGroup"])
+            .library(
+                    name: "SwiftUIChipGroup",
+                    targets: ["SwiftUIChipGroup"]
+            )
         ],
         dependencies: [],
         targets: [
             .target(
-                    name: "ChipGroup",
+                    name: "SwiftUIChipGroup",
                     dependencies: [],
-                    path: "Sources",
-                    exclude: ["Tests", "Examples"])
+                    path: "Sources")
         ]
 )
