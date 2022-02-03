@@ -28,9 +28,6 @@
 
 ## Installation
 
-
-## Installation
-
 ### Xcode Projects
 
 Select `File` -> `Swift Packages` -> `Add Package Dependency` and enter `https://github.com/Open-Bytes/ChipGroup`.
